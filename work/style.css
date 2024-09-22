@@ -119,7 +119,43 @@ html, body {
     font-size: 25px;
   }
 
-  #home a img {
-    width: 48px;
+  #home a {
     margin-top: 25px;
   }
+
+  #home a img {
+    width: 48px;
+  }
+
+  #current h1 {
+    font-size: 48px;
+  }
+
+  #current h2 {
+    font-size: 24px;
+  }
+
+  #current p {
+    font-size: 20px;
+  }
+
+  #current p a{
+    color: #a5a5a5;
+  }
+
+  #all p a{
+    color: #a5a5a5;
+  }
+
+  footer {
+    width: 100%;
+    height: 65px;
+    bottom: 0;
+    right: 0;
+    background: #2e2e2e;
+  }
+  
+  footer p {
+    padding-top: 25px;
+  }
+  
