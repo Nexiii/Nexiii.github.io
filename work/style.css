@@ -132,19 +132,66 @@ html, body {
   }
 
   #current h2 {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   #current p {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #current p a{
     color: #a5a5a5;
+    text-decoration: underline;
+    font-size: 16px;
   }
 
-  #all p a{
+  #current img {
+    height: 175px;
+  }
+
+  #all, #all section {
+    background-color: #5c5c5c;
+  }
+
+  #all h1 {
+    font-size: 48px;
+  }
+
+  #all section h2 {
+    padding-top: 128px;
+    font-size: 32px;
+  }
+
+  #all section p {
+    font-size: 16px;
+  }
+
+  #all section p a{
+    font-size: 16px;
     color: #a5a5a5;
+    text-decoration: underline;
+  }
+
+  #all section img {
+    height: 175px;
+  }
+
+  #planned h1 {
+    font-size: 48px;
+  }
+
+  #planned h2 {
+    font-size: 32px;
+  }
+
+  #planned p {
+    font-size: 16px;
+  }
+
+  #planned p a{
+    color: #a5a5a5;
+    text-decoration: underline;
+    font-size: 16px;
   }
 
   footer {
@@ -158,4 +205,3 @@ html, body {
   footer p {
     padding-top: 25px;
   }
-  
