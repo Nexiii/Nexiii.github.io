@@ -98,7 +98,6 @@ header nav ul li a {
 }
 
 header nav ul li:hover {
-  backgound-color: blue;
   padding-top: 5px;
 }
 
