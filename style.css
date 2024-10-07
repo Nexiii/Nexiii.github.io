@@ -103,7 +103,7 @@ header nav ul li:hover {
 
 /*HOME*/
 #home {
-  background: url(src/landing.jpg);
+  background: url(src/landing.gif);
   background-position: center center;
   background-size: cover;
   background-attachment: fixed;
@@ -132,6 +132,16 @@ header nav ul li:hover {
   font-size: 15px;
   width: 700px;
   margin: 0 auto 0 auto;
+}
+
+#first {
+  height: 140px;
+}
+#second {
+  height: 140px;
+}
+#last {
+  width: 640px;
 }
 
 footer {

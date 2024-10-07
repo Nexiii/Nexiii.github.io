@@ -103,7 +103,7 @@ html, body {
   
   /*HOME*/
   #home {
-    background: url(../src/landing.jpg);
+    background: url(../src/landing.gif);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
