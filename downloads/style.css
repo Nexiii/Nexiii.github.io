@@ -119,29 +119,19 @@ header nav ul li:hover {
   font-size: 25px;
 }
 
-#about h1 {
+#downloads h1 {
   margin: 0 auto 0 auto;
   font-size: 48px;
 }
 
-#about h2 {
-  font-size: 32x;
+#downloads h2 {
+  font-size: 32px;
 }
 
-#about p {
+#downloads p {
   font-size: 16px;
   width: 700px;
   margin: 0 auto 0 auto;
-}
-
-#first {
-  height: 140px;
-}
-#second {
-  height: 140px;
-}
-#last {
-  width: 640px;
 }
 
 footer {
