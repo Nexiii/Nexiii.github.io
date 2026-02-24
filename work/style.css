@@ -103,7 +103,7 @@ html, body {
   
   /*HOME*/
   #home {
-    background: url(https://www.wallpaperengine.space/wallpaper/frieren-by-the-campfire-with-fireflies);
+    background: url(https://images3.alphacoders.com/563/thumb-1920-563119.jpg);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -205,5 +205,4 @@ html, body {
   
   footer p {
     padding-top: 25px;
-
   }
