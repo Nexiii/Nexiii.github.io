@@ -23,8 +23,8 @@
     checksum:
       "45D7A009F0A7B1E99B791E4288D431CCF023D2F8DAD9DA475E86A65C3A1D20EC"
   };
-  var releasesApi =
-    "https://api.github.com/repos/Nexiii/OrbDeck/releases?per_page=20";
+  var manifestUrl =
+    "https://raw.githubusercontent.com/Nexiii/OrbDeck/main/latest.json";
 
   function closeNavigation() {
     navigation.classList.remove("open");
@@ -65,18 +65,6 @@
       setLanguage(button.getAttribute("data-language"));
     });
   });
-
-  function installerScore(asset) {
-    var name = asset.name.toLowerCase();
-    var score = 0;
-
-    if (/setup|installer/.test(name)) score += 8;
-    if (/x64|amd64|win64/.test(name)) score += 4;
-    if (name.endsWith(".exe")) score += 2;
-    if (/portable|arm64|aarch64/.test(name)) score -= 8;
-
-    return score;
-  }
 
   function normalizeVersion(value) {
     return String(value || "")
@@ -136,52 +124,42 @@
     return null;
   }
 
-  function fetchGithubCandidate() {
-    return fetch(releasesApi, {
-      cache: "no-store",
-      headers: { Accept: "application/vnd.github+json" }
+  function fetchManifestCandidate() {
+    return fetch(manifestUrl + "?cache=" + Date.now(), {
+      cache: "no-store"
     })
       .then(function (response) {
-        if (!response.ok) throw new Error("Releases are unavailable");
+        if (!response.ok) throw new Error("Update manifest is unavailable");
         return response.json();
       })
-      .then(function (releases) {
-        var published = releases.filter(function (candidate) {
-          return !candidate.draft && candidate.published_at;
-        });
-        published.sort(function (left, right) {
-          return compareVersions(right.tag_name, left.tag_name);
-        });
-        var release = published[0];
-        if (!release) throw new Error("No published release is available");
-
-        var installers = release.assets
-          .filter(function (asset) {
-            return asset.state === "uploaded" && /\.(exe|msi)$/i.test(asset.name);
-          })
-          .sort(function (left, right) {
-            return installerScore(right) - installerScore(left);
-          });
-        if (!installers.length) throw new Error("No installer is available");
-
-        var installer = installers[0];
-        var checksumAsset = release.assets.find(function (asset) {
-          return asset.name === installer.name + ".sha256";
-        });
+      .then(function (manifest) {
+        var platform =
+          manifest.platforms && manifest.platforms["windows-x86_64"];
+        var version = normalizeVersion(manifest.version);
+        var downloadUrl = platform
+          ? safeHttpsUrl(platform.url, [
+              "github.com",
+              "objects.githubusercontent.com"
+            ])
+          : null;
+        if (!versionParts(version) || !downloadUrl) {
+          throw new Error("Update manifest is incomplete");
+        }
+        var releaseUrl =
+          "https://github.com/Nexiii/OrbDeck/releases/tag/v" +
+          encodeURIComponent(version);
+        var manifestChecksum = String(platform.sha256 || "").match(
+          /^[A-Fa-f0-9]{64}$/
+        );
         return {
-          version: normalizeVersion(release.tag_name),
-          downloadUrl: safeHttpsUrl(installer.browser_download_url, [
-            "github.com",
-            "objects.githubusercontent.com"
-          ]),
-          releaseUrl: safeHttpsUrl(release.html_url, ["github.com"]),
-          size: installer.size,
-          checksumUrl: checksumAsset
-            ? safeHttpsUrl(checksumAsset.browser_download_url, [
-                "github.com",
-                "objects.githubusercontent.com"
-              ])
-            : null
+          version: version,
+          downloadUrl: downloadUrl,
+          releaseUrl: releaseUrl,
+          size: Number(platform.size) || null,
+          checksum: manifestChecksum
+            ? manifestChecksum[0].toUpperCase()
+            : null,
+          checksumUrl: downloadUrl + ".sha256"
         };
       });
   }
@@ -274,7 +252,7 @@
 
   function updateLatestRelease() {
     applyRelease(bundledRelease);
-    fetchGithubCandidate()
+    fetchManifestCandidate()
       .then(function (candidate) {
         if (
           compareVersions(candidate.version, bundledRelease.version) >= 0
