@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="frame" x1="160" y1="104" x2="842" y2="922" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9B85FF"/>
+      <stop offset="0.48" stop-color="#7557F3"/>
+      <stop offset="1" stop-color="#4930B7"/>
+    </linearGradient>
+    <radialGradient id="surface" cx="0" cy="0" r="1" gradientTransform="translate(340 252) rotate(51) scale(915)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#232536"/>
+      <stop offset="0.55" stop-color="#11131D"/>
+      <stop offset="1" stop-color="#090A10"/>
+    </radialGradient>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientTransform="translate(446 411) rotate(52) scale(302)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFC5FF"/>
+      <stop offset="0.42" stop-color="#8869FF"/>
+      <stop offset="1" stop-color="#5130CD"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="246" fill="#090A10"/>
+  <rect x="70" y="70" width="884" height="884" rx="218" fill="url(#surface)"/>
+  <rect x="84" y="84" width="856" height="856" rx="204" fill="none" stroke="url(#frame)" stroke-width="28"/>
+  <ellipse cx="512" cy="512" rx="322" ry="126" transform="rotate(-24 512 512)" fill="none" stroke="#F7F5FF" stroke-width="42" stroke-linecap="round"/>
+  <circle cx="512" cy="512" r="150" fill="url(#orb)"/>
+  <circle cx="468" cy="463" r="42" fill="#FFFFFF" opacity="0.16"/>
+  <circle cx="781" cy="393" r="42" fill="#5FE3BD"/>
+</svg>

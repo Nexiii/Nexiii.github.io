@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08090d">
+    <meta
+      name="description"
+      content="OrbDeck turns your phone into a local command deck for OBS Studio and Windows."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OrbDeck — Control without the hardware.">
+    <meta
+      property="og:description"
+      content="A local-first command deck for OBS Studio and Windows."
+    >
+    <meta property="og:image" content="assets/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/orbdeck-icon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <title>OrbDeck — Control without the hardware.</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="#top" aria-label="OrbDeck home">
+        <img src="assets/orbdeck-icon.svg" alt="">
+        <span>OrbDeck</span>
+      </a>
+
+      <nav class="navigation" id="navigation" aria-label="Primary navigation">
+        <a href="#features" data-en="Features" data-de="Features">Features</a>
+        <a href="#obs" data-en="OBS support" data-de="OBS-Support">OBS support</a>
+        <a href="#setup" data-en="Setup" data-de="Einrichtung">Setup</a>
+        <a href="#security" data-en="Local-first" data-de="Lokal">Local-first</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language" aria-label="Language">
+          <button class="active" type="button" data-language="en">EN</button>
+          <button type="button" data-language="de">DE</button>
+        </div>
+        <a
+          class="button button-small"
+          href="https://github.com/Nexiii/OrbDeck/releases/download/v0.12.0-beta/OrbDeck_0.12.0-beta_x64-setup.exe"
+          data-latest-download
+        >
+          <span data-en="Download" data-de="Download">Download</span>
+          <span aria-hidden="true">↘</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <a
+            class="release-badge"
+            href="https://github.com/Nexiii/OrbDeck/releases/tag/v0.12.0-beta"
+            data-latest-release
+          >
+            <i></i>
+            <span
+              data-release-label
+              data-en="Version 0.12 Beta is available"
+              data-de="Version 0.12 Beta ist verfügbar"
+            >
+              Version 0.12 Beta is available
+            </span>
+            <b aria-hidden="true">→</b>
+          </a>
+
+          <p
+            class="overline"
+            data-en="Your phone is the hardware."
+            data-de="Dein Handy ist die Hardware."
+          >
+            Your phone is the hardware.
+          </p>
+          <h1>
+            <span data-en="Control" data-de="Kontrolle">Control</span>
+            <span data-en="without the" data-de="ohne neue">without the</span>
+            <span class="accent" data-en="hardware." data-de="Hardware.">hardware.</span>
+          </h1>
+          <p
+            class="hero-text"
+            data-en="Turn any phone or tablet into a fast, customizable command deck for OBS Studio, Windows, games and media."
+            data-de="Verwandle jedes Handy oder Tablet in ein schnelles, frei konfigurierbares Command Deck für OBS Studio, Windows, Games und Medien."
+          >
+            Turn any phone or tablet into a fast, customizable command deck for
+            OBS Studio, Windows, games and media.
+          </p>
+          <div class="hero-buttons">
+            <a
+              class="button button-primary"
+              href="https://github.com/Nexiii/OrbDeck/releases/download/v0.12.0-beta/OrbDeck_0.12.0-beta_x64-setup.exe"
+              data-latest-download
+            >
+              <span aria-hidden="true">⊞</span>
+              <span data-en="Download for Windows" data-de="Für Windows herunterladen">
+                Download for Windows
+              </span>
+            </a>
+            <a class="button button-secondary" href="#features">
+              <span data-en="See what it can do" data-de="Funktionen ansehen">
+                See what it can do
+              </span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <ul class="compatibility">
+            <li>Windows 10/11</li>
+            <li data-en="Local network" data-de="Lokales Netzwerk">Local network</li>
+            <li data-en="Free during beta" data-de="In der Beta kostenlos">Free during beta</li>
+          </ul>
+        </div>
+
+        <div class="product-preview" aria-label="OrbDeck product preview">
+          <div class="preview-orbit"></div>
+          <div class="desktop-window">
+            <div class="window-titlebar">
+              <span class="mini-brand">
+                <img src="assets/orbdeck-icon.svg" alt="">
+                OrbDeck
+              </span>
+              <span class="window-dots"><i></i><i></i><i></i></span>
+            </div>
+            <div class="window-content">
+              <aside>
+                <small>WORKSPACE</small>
+                <span class="selected">▦ Deck</span>
+                <span>▱ Pages</span>
+                <span>⌘ Actions</span>
+                <span>⚙ Settings</span>
+              </aside>
+              <div class="deck-area">
+                <div class="deck-heading">
+                  <div>
+                    <small>STREAM CONTROL</small>
+                    <strong>Live Set</strong>
+                  </div>
+                  <span class="online"><i></i> ONLINE</span>
+                </div>
+                <div class="deck-buttons">
+                  <button class="purple"><img src="assets/icons/scene.svg" alt=""><b>SCENE</b></button>
+                  <button class="red"><img src="assets/icons/record.svg" alt=""><b>RECORD</b></button>
+                  <button class="green"><img src="assets/icons/mic.svg" alt=""><b>MIC</b></button>
+                  <button class="blue"><img src="assets/icons/music.svg" alt=""><b>MUSIC</b></button>
+                  <button class="yellow"><img src="assets/icons/game.svg" alt=""><b>GAME</b></button>
+                  <button><img src="assets/icons/more.svg" alt=""><b>MORE</b></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone">
+            <div class="phone-speaker"></div>
+            <div class="phone-screen">
+              <div class="phone-heading">
+                <img src="assets/orbdeck-icon.svg" alt="">
+                <span>Gameplay</span>
+                <i></i>
+              </div>
+              <div class="phone-buttons">
+                <button class="purple"><img src="assets/icons/scene.svg" alt=""><b>SCENE</b></button>
+                <button class="red"><img src="assets/icons/record.svg" alt=""><b>REC</b></button>
+                <button class="green"><img src="assets/icons/mic.svg" alt=""><b>MIC</b></button>
+                <button class="blue"><img src="assets/icons/music.svg" alt=""><b>MUSIC</b></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="action-strip" aria-label="Supported actions">
+        <span>OBS STUDIO</span><i>✦</i>
+        <span>HOTKEYS</span><i>✦</i>
+        <span>STEAM</span><i>✦</i>
+        <span>MEDIA</span><i>✦</i>
+        <span>PROGRAMS</span><i>✦</i>
+        <span>URL SCHEMES</span><i>✦</i>
+        <span>SHELL</span><i>✦</i>
+        <span>CUSTOM ICONS</span>
+      </div>
+
+      <section class="features container section" id="features">
+        <div class="section-heading">
+          <p class="eyebrow" data-en="One deck, your rules" data-de="Ein Deck, deine Regeln">
+            One deck, your rules
+          </p>
+          <h2
+            data-en="Everything you need. Nothing you do not."
+            data-de="Alles, was du brauchst. Nichts, was du nicht brauchst."
+          >
+            Everything you need. Nothing you do not.
+          </h2>
+          <p
+            data-en="Build focused pages for streaming, gaming or everyday work. Every button can look and behave exactly the way your setup needs."
+            data-de="Baue fokussierte Seiten für Streaming, Gaming oder den Alltag. Jeder Button kann genau so aussehen und reagieren, wie dein Setup es braucht."
+          >
+            Build focused pages for streaming, gaming or everyday work. Every
+            button can look and behave exactly the way your setup needs.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article>
+            <span class="feature-icon"><img src="assets/icons/obs.svg" alt=""></span>
+            <h3 data-en="Native OBS control" data-de="Native OBS-Steuerung">Native OBS control</h3>
+            <p
+              data-en="Start streams, switch scenes, control recording and mute individual audio sources."
+              data-de="Starte Streams, wechsle Szenen, steuere Aufnahmen und schalte einzelne Audioquellen stumm."
+            >
+              Start streams, switch scenes, control recording and mute
+              individual audio sources.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon"><img src="assets/icons/hotkeys.svg" alt=""></span>
+            <h3 data-en="Hotkeys & media" data-de="Hotkeys & Medien">Hotkeys & media</h3>
+            <p
+              data-en="Send key combinations and control playback without leaving the current window."
+              data-de="Sende Tastenkombinationen und steuere Medien, ohne das aktuelle Fenster zu verlassen."
+            >
+              Send key combinations and control playback without leaving the
+              current window.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon"><img src="assets/icons/launch.svg" alt=""></span>
+            <h3 data-en="Apps, games & URLs" data-de="Apps, Games & URLs">Apps, games & URLs</h3>
+            <p
+              data-en="Launch programs, files, Steam games and custom links with a single tap."
+              data-de="Starte Programme, Dateien, Steam-Spiele und eigene Links mit einem Tap."
+            >
+              Launch programs, files, Steam games and custom links with a single tap.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon"><img src="assets/icons/pages.svg" alt=""></span>
+            <h3 data-en="Pages & custom icons" data-de="Seiten & eigene Icons">Pages & custom icons</h3>
+            <p
+              data-en="Organize unlimited workflows with flexible layouts, button sizes and your own artwork."
+              data-de="Organisiere deine Workflows mit flexiblen Layouts, Button-Größen und eigenen Grafiken."
+            >
+              Organize unlimited workflows with flexible layouts, button sizes
+              and your own artwork.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon"><img src="assets/icons/terminal.svg" alt=""></span>
+            <h3 data-en="Power actions" data-de="Power-Aktionen">Power actions</h3>
+            <p
+              data-en="Run controlled shell commands when a normal shortcut is not enough."
+              data-de="Führe kontrollierte Shell-Befehle aus, wenn ein normaler Shortcut nicht reicht."
+            >
+              Run controlled shell commands when a normal shortcut is not enough.
+            </p>
+          </article>
+          <article>
+            <span class="feature-icon"><img src="assets/icons/updates.svg" alt=""></span>
+            <h3 data-en="Backup & updates" data-de="Backup & Updates">Backup & updates</h3>
+            <p
+              data-en="Export your configuration and stay current with the built-in update checker."
+              data-de="Exportiere deine Konfiguration und bleibe mit der integrierten Update-Prüfung aktuell."
+            >
+              Export your configuration and stay current with the built-in
+              update checker.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="obs-section container section" id="obs">
+        <div class="obs-copy">
+          <p class="eyebrow" data-en="Built for live moments" data-de="Für Live-Momente gebaut">
+            Built for live moments
+          </p>
+          <h2
+            data-en="OBS control that feels immediate."
+            data-de="OBS-Steuerung, die direkt reagiert."
+          >
+            OBS control that feels immediate.
+          </h2>
+          <p
+            data-en="OrbDeck talks directly to the WebSocket already built into OBS Studio. No additional OBS plugin and no cloud service in the middle."
+            data-de="OrbDeck spricht direkt mit dem bereits in OBS Studio integrierten WebSocket. Kein zusätzliches OBS-Plugin und kein Cloud-Dienst dazwischen."
+          >
+            OrbDeck talks directly to the WebSocket already built into OBS
+            Studio. No additional OBS plugin and no cloud service in the middle.
+          </p>
+          <ul>
+            <li data-en="Start and stop streaming" data-de="Streaming starten und stoppen">
+              Start and stop streaming
+            </li>
+            <li data-en="Switch scenes instantly" data-de="Szenen sofort wechseln">
+              Switch scenes instantly
+            </li>
+            <li data-en="Control recording" data-de="Aufnahmen steuern">Control recording</li>
+            <li data-en="Mute individual sources" data-de="Einzelne Quellen stummschalten">
+              Mute individual sources
+            </li>
+          </ul>
+        </div>
+
+        <div class="obs-card">
+          <div class="obs-card-header">
+            <span class="obs-logo">OBS</span>
+            <div>
+              <strong>OBS STUDIO</strong>
+              <small>WebSocket · 127.0.0.1</small>
+            </div>
+            <span class="live"><i></i> LIVE</span>
+          </div>
+          <div class="scene">
+            <small data-en="Current scene" data-de="Aktuelle Szene">Current scene</small>
+            <strong>Gameplay</strong>
+            <span>03</span>
+          </div>
+          <div class="obs-actions">
+            <button><span>●</span><small>STREAM</small><b>ON</b></button>
+            <button><span>◉</span><small>RECORD</small><b>ON</b></button>
+          </div>
+          <div class="audio">
+            <div><span>⌁</span><strong>Microphone</strong><i><b style="width: 72%"></b></i><em>MUTED</em></div>
+            <div><span>♫</span><strong>Desktop Audio</strong><i><b style="width: 46%"></b></i><em>ON</em></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="setup container section" id="setup">
+        <div class="section-heading centered">
+          <p class="eyebrow" data-en="Ready in minutes" data-de="In Minuten startklar">
+            Ready in minutes
+          </p>
+          <h2 data-en="Three steps. Zero new hardware." data-de="Drei Schritte. Keine neue Hardware.">
+            Three steps. Zero new hardware.
+          </h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3 data-en="Install OrbDeck" data-de="OrbDeck installieren">Install OrbDeck</h3>
+            <p
+              data-en="Start the lightweight Windows desktop app and activate the local server."
+              data-de="Starte die schlanke Windows-App und aktiviere den lokalen Server."
+            >
+              Start the lightweight Windows desktop app and activate the local server.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-en="Scan the QR code" data-de="QR-Code scannen">Scan the QR code</h3>
+            <p
+              data-en="Open the deck on your phone or tablet while both devices share a network."
+              data-de="Öffne das Deck auf deinem Handy oder Tablet, während beide Geräte im selben Netzwerk sind."
+            >
+              Open the deck on your phone or tablet while both devices share a network.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3 data-en="Build your workflow" data-de="Workflow bauen">Build your workflow</h3>
+            <p
+              data-en="Create pages, add actions and arrange every button around the way you work."
+              data-de="Erstelle Seiten, füge Aktionen hinzu und ordne jeden Button passend zu deiner Arbeit an."
+            >
+              Create pages, add actions and arrange every button around the way you work.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="security container section" id="security">
+        <div class="security-graphic" aria-hidden="true">
+          <div class="security-ring">
+            <span class="security-core"><img src="assets/orbdeck-icon.svg" alt=""></span>
+            <b class="node node-pc">PC</b>
+            <b class="node node-phone">PHONE</b>
+            <b class="node node-obs">OBS</b>
+          </div>
+        </div>
+        <div class="security-copy">
+          <p class="eyebrow" data-en="Local by design" data-de="Von Grund auf lokal">
+            Local by design
+          </p>
+          <h2 data-en="Your buttons do not need a cloud." data-de="Deine Buttons brauchen keine Cloud.">
+            Your buttons do not need a cloud.
+          </h2>
+          <p
+            data-en="The desktop app serves your deck directly over the local network. Your actions and configuration stay on your PC."
+            data-de="Die Desktop-App stellt dein Deck direkt im lokalen Netzwerk bereit. Deine Aktionen und deine Konfiguration bleiben auf deinem PC."
+          >
+            The desktop app serves your deck directly over the local network.
+            Your actions and configuration stay on your PC.
+          </p>
+          <div class="security-list">
+            <span data-en="Local server" data-de="Lokaler Server">Local server</span>
+            <span data-en="Optional password" data-de="Optionales Passwort">Optional password</span>
+            <span data-en="Portable backups" data-de="Portable Backups">Portable backups</span>
+            <span data-en="No OrbDeck account" data-de="Kein OrbDeck-Konto">No OrbDeck account</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="download container section" id="download">
+        <p class="eyebrow">EARLY ACCESS</p>
+        <h2
+          data-en="Give your old phone a new job."
+          data-de="Gib deinem alten Handy einen neuen Job."
+        >
+          Give your old phone a new job.
+        </h2>
+        <p
+          data-release-copy
+          data-en="Download OrbDeck 0.12 Beta and build your first command deck in minutes."
+          data-de="Lade OrbDeck 0.12 Beta und baue dein erstes Command Deck in wenigen Minuten."
+        >
+          Download OrbDeck 0.12 Beta and build your first command deck in minutes.
+        </p>
+        <div class="download-actions">
+          <a
+            class="button button-primary button-large"
+            href="https://github.com/Nexiii/OrbDeck/releases/download/v0.12.0-beta/OrbDeck_0.12.0-beta_x64-setup.exe"
+            data-latest-download
+          >
+            <span aria-hidden="true">⊞</span>
+            <span data-en="Download OrbDeck" data-de="OrbDeck herunterladen">Download OrbDeck</span>
+          </a>
+          <a
+            class="text-link"
+            href="https://github.com/Nexiii/OrbDeck/releases/tag/v0.12.0-beta"
+            data-latest-release
+          >
+            <span data-en="Release notes" data-de="Release Notes">Release notes</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <small data-release-meta>Windows 10/11 · x64 · 4.9 MB</small>
+        <div class="checksum">
+          <span>SHA-256</span>
+          <code>45D7A009F0A7B1E99B791E4288D431CCF023D2F8DAD9DA475E86A65C3A1D20EC</code>
+          <button type="button" data-en="Copy" data-de="Kopieren">Copy</button>
+        </div>
+      </section>
+
+      <section class="faq container section">
+        <div class="section-heading centered">
+          <p class="eyebrow" data-en="Good to know" data-de="Gut zu wissen">Good to know</p>
+          <h2 data-en="Before your first tap." data-de="Vor deinem ersten Tap.">
+            Before your first tap.
+          </h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary data-en="Do I need a mobile app?" data-de="Brauche ich eine Handy-App?">
+              Do I need a mobile app?
+            </summary>
+            <p
+              data-en="No. The mobile deck runs directly in a modern browser. Scan the QR code shown by OrbDeck and you are ready."
+              data-de="Nein. Das mobile Deck läuft direkt in einem modernen Browser. Scanne den von OrbDeck angezeigten QR-Code und du kannst starten."
+            >
+              No. The mobile deck runs directly in a modern browser. Scan the QR
+              code shown by OrbDeck and you are ready.
+            </p>
+          </details>
+          <details>
+            <summary data-en="Does OrbDeck work without OBS?" data-de="Funktioniert OrbDeck ohne OBS?">
+              Does OrbDeck work without OBS?
+            </summary>
+            <p
+              data-en="Yes. OBS is one action type among many. OrbDeck also supports programs, files, hotkeys, media, URLs, Steam games and shell commands."
+              data-de="Ja. OBS ist eine von vielen Aktionsarten. OrbDeck unterstützt außerdem Programme, Dateien, Hotkeys, Medien, URLs, Steam-Spiele und Shell-Befehle."
+            >
+              Yes. OBS is one action type among many. OrbDeck also supports
+              programs, files, hotkeys, media, URLs, Steam games and shell commands.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Do both devices need the same network?"
+              data-de="Müssen beide Geräte im selben Netzwerk sein?"
+            >
+              Do both devices need the same network?
+            </summary>
+            <p
+              data-en="For normal local use, yes. Your Windows PC and phone or tablet should share the same private network."
+              data-de="Für die normale lokale Nutzung ja. Dein Windows-PC und dein Handy oder Tablet sollten dasselbe private Netzwerk verwenden."
+            >
+              For normal local use, yes. Your Windows PC and phone or tablet
+              should share the same private network.
+            </p>
+          </details>
+          <details>
+            <summary
+              data-en="Can I protect the web interface?"
+              data-de="Kann ich die Web-Oberfläche schützen?"
+            >
+              Can I protect the web interface?
+            </summary>
+            <p
+              data-en="Yes. Optional password protection can lock the web interface on shared or public networks."
+              data-de="Ja. Ein optionaler Passwortschutz kann die Web-Oberfläche in geteilten oder öffentlichen Netzwerken sperren."
+            >
+              Yes. Optional password protection can lock the web interface on
+              shared or public networks.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <a class="brand" href="#top">
+        <img src="assets/orbdeck-icon.svg" alt="">
+        <span>OrbDeck</span>
+      </a>
+      <p data-en="Local-first control for creators." data-de="Lokale Kontrolle für Creator.">
+        Local-first control for creators.
+      </p>
+      <span data-release-footer>Early Access · 0.12 Beta</span>
+      <span>© 2026 OrbDeck</span>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
