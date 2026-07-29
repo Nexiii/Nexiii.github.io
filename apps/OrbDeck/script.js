@@ -11,20 +11,24 @@
   var releaseCopy = document.querySelector("[data-release-copy]");
   var releaseMeta = document.querySelector("[data-release-meta]");
   var releaseFooter = document.querySelector("[data-release-footer]");
+  var downloadCount = document.querySelector("[data-download-count]");
   var checksumButton = document.querySelector(".checksum button");
   var checksum = document.querySelector(".checksum code");
   var currentLanguage = "en";
+  var currentDownloadCount = 6;
   var bundledRelease = {
-    version: "0.12.0-beta",
+    version: "0.12.2-beta",
     downloadUrl:
-      "https://github.com/Nexiii/OrbDeck/releases/download/v0.12.0-beta/OrbDeck_0.12.0-beta_x64-setup.exe",
-    releaseUrl: "https://github.com/Nexiii/OrbDeck/releases/tag/v0.12.0-beta",
-    size: 5142070,
+      "https://github.com/Nexiii/OrbDeck/releases/download/v0.12.2-beta/OrbDeck_0.12.2-beta_x64-setup.exe",
+    releaseUrl: "https://github.com/Nexiii/OrbDeck/releases/tag/v0.12.2-beta",
+    size: 5174004,
     checksum:
-      "45D7A009F0A7B1E99B791E4288D431CCF023D2F8DAD9DA475E86A65C3A1D20EC"
+      "4E2D635C93FD560779EC9ED1CF65F11FEAA9DD73C8DECAE5680B0E6870BC3BC8"
   };
   var manifestUrl =
     "https://raw.githubusercontent.com/Nexiii/OrbDeck/main/latest.json";
+  var releasesApiUrl =
+    "https://api.github.com/repos/Nexiii/OrbDeck/releases?per_page=100";
 
   function closeNavigation() {
     navigation.classList.remove("open");
@@ -58,6 +62,74 @@
       language === "de"
         ? "OrbDeck — Kontrolle ohne neue Hardware."
         : "OrbDeck — Control without the hardware.";
+    renderDownloadCount();
+  }
+
+  function renderDownloadCount() {
+    if (!downloadCount) return;
+    downloadCount.textContent = new Intl.NumberFormat(
+      currentLanguage === "de" ? "de-DE" : "en-US"
+    ).format(currentDownloadCount);
+  }
+
+  function updateDownloadCount() {
+    try {
+      var cachedCount = Number(
+        window.localStorage.getItem("orbdeck-download-count")
+      );
+      if (Number.isSafeInteger(cachedCount) && cachedCount > currentDownloadCount) {
+        currentDownloadCount = cachedCount;
+        renderDownloadCount();
+      }
+    } catch (_) {
+      // The bundled count remains available when storage is blocked.
+    }
+
+    fetch(releasesApiUrl, {
+      cache: "no-store",
+      headers: { Accept: "application/vnd.github+json" }
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error("Release statistics are unavailable");
+        return response.json();
+      })
+      .then(function (releases) {
+        if (!Array.isArray(releases)) {
+          throw new Error("Release statistics are incomplete");
+        }
+        var total = releases.reduce(function (releaseTotal, release) {
+          if (release.draft || !Array.isArray(release.assets)) {
+            return releaseTotal;
+          }
+          return (
+            releaseTotal +
+            release.assets.reduce(function (assetTotal, asset) {
+              var isInstaller =
+                asset &&
+                asset.state === "uploaded" &&
+                /^OrbDeck_.+_x64-setup\.exe$/i.test(String(asset.name || ""));
+              var count = Number(asset && asset.download_count);
+              return isInstaller && Number.isSafeInteger(count) && count >= 0
+                ? assetTotal + count
+                : assetTotal;
+            }, 0)
+          );
+        }, 0);
+        if (total < currentDownloadCount) return;
+        currentDownloadCount = total;
+        renderDownloadCount();
+        try {
+          window.localStorage.setItem(
+            "orbdeck-download-count",
+            String(currentDownloadCount)
+          );
+        } catch (_) {
+          // The live counter still works when storage is blocked.
+        }
+      })
+      .catch(function () {
+        // Keep the last known count when GitHub is offline or rate-limited.
+      });
   }
 
   languageButtons.forEach(function (button) {
@@ -297,4 +369,5 @@
 
   setLanguage("en");
   updateLatestRelease();
+  updateDownloadCount();
 })();
