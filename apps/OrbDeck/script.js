@@ -17,13 +17,11 @@
   var currentLanguage = "en";
   var currentDownloadCount = 6;
   var bundledRelease = {
-    version: "0.12.2-beta",
-    downloadUrl:
-      "https://github.com/Nexiii/OrbDeck/releases/download/v0.12.2-beta/OrbDeck_0.12.2-beta_x64-setup.exe",
-    releaseUrl: "https://github.com/Nexiii/OrbDeck/releases/tag/v0.12.2-beta",
-    size: 5174004,
-    checksum:
-      "4E2D635C93FD560779EC9ED1CF65F11FEAA9DD73C8DECAE5680B0E6870BC3BC8"
+    version: "",
+    downloadUrl: "https://github.com/Nexiii/OrbDeck/releases",
+    releaseUrl: "https://github.com/Nexiii/OrbDeck/releases",
+    size: null,
+    checksum: null
   };
   var manifestUrl =
     "https://raw.githubusercontent.com/Nexiii/OrbDeck/main/latest.json";
@@ -254,7 +252,7 @@
   }
 
   function applyRelease(candidate) {
-    var version = displayVersion(candidate.version);
+    var version = candidate.version ? displayVersion(candidate.version) : "";
     if (candidate.downloadUrl) {
       latestDownloadLinks.forEach(function (link) {
         link.href = candidate.downloadUrl;
@@ -265,7 +263,7 @@
         link.href = candidate.releaseUrl;
       });
     }
-    if (releaseLabel) {
+    if (releaseLabel && version) {
       releaseLabel.setAttribute(
         "data-en",
         "Version " + version + " is available"
@@ -275,7 +273,7 @@
         "Version " + version + " ist verfügbar"
       );
     }
-    if (releaseCopy) {
+    if (releaseCopy && version) {
       releaseCopy.setAttribute(
         "data-en",
         "Download OrbDeck " +
@@ -295,7 +293,7 @@
         (candidate.size / 1024 / 1024).toFixed(1) +
         " MB";
     }
-    if (releaseFooter) {
+    if (releaseFooter && version) {
       releaseFooter.textContent = "Early Access · " + version;
     }
     if (
