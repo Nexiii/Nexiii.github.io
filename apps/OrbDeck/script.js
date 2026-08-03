@@ -28,18 +28,49 @@
   var releasesApiUrl =
     "https://api.github.com/repos/Nexiii/OrbDeck/releases?per_page=100";
 
+  function setNavigationOpen(isOpen) {
+    navigation.classList.toggle("open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute(
+      "aria-label",
+      currentLanguage === "de"
+        ? isOpen
+          ? "Navigation schlie\u00dfen"
+          : "Navigation \u00f6ffnen"
+        : isOpen
+          ? "Close navigation"
+          : "Open navigation"
+    );
+  }
+
   function closeNavigation() {
-    navigation.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+    setNavigationOpen(false);
   }
 
   menuButton.addEventListener("click", function () {
-    var isOpen = navigation.classList.toggle("open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
+    setNavigationOpen(!navigation.classList.contains("open"));
   });
 
   navigation.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", closeNavigation);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeNavigation();
+  });
+
+  document.addEventListener("click", function (event) {
+    if (
+      navigation.classList.contains("open") &&
+      event.target instanceof Element &&
+      !event.target.closest(".header")
+    ) {
+      closeNavigation();
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 1120) closeNavigation();
   });
 
   function setLanguage(language) {
@@ -55,6 +86,8 @@
       button.classList.toggle("active", isActive);
       button.setAttribute("aria-pressed", String(isActive));
     });
+
+    setNavigationOpen(navigation.classList.contains("open"));
 
     document.title =
       language === "de"
