@@ -1,0 +1,13 @@
+{
+  "version": "0.13.0-beta",
+  "notes": "OrbDeck 0.13.0-beta",
+  "pub_date": "2026-07-29T00:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "PASTE_THE_CONTENT_OF_THE_UPDATER_SIG_FILE_HERE",
+      "url": "https://github.com/Nexiii/OrbDeck/releases/download/v0.13.0-beta/OrbDeck_0.13.0-beta_x64-setup.exe",
+      "sha256": "REPLACE_WITH_INSTALLER_SHA256",
+      "size": 0
+    }
+  }
+}

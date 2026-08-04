@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07080e" />
+    <meta name="description" content="Turn any phone or tablet into a local command deck for OBS Studio, Windows, games and media." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OrbDeck — Your setup. In your orbit." />
+    <meta property="og:description" content="A free, local-first command deck for OBS Studio and Windows." />
+    <meta property="og:image" content="./og-purple.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OrbDeck — Your setup. In your orbit." />
+    <meta name="twitter:description" content="A free, local-first command deck for OBS Studio and Windows." />
+    <meta name="twitter:image" content="./og-purple.png" />
+    <title>OrbDeck — Your setup. In your orbit.</title>
+    <link rel="icon" href="./assets/orbdeck-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="page-progress" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="OrbDeck home">
+          <img src="./assets/orbdeck-icon.svg" alt="" />
+          <span>OrbDeck</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#orbit">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#why">Why OrbDeck</a>
+        </nav>
+        <div class="header-actions">
+          <a class="version-link" data-release-notes href="https://github.com/Nexiii/OrbDeck/releases" data-release-text="version">vLatest beta</a>
+          <a class="header-kofi" href="https://ko-fi.com/nexiii" target="_blank" rel="noreferrer"><span aria-hidden="true">&hearts;</span> Ko-fi</a>
+          <a class="header-download" data-release-download href="https://github.com/Nexiii/OrbDeck/releases">Download</a>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+        </div>
+      </header>
+
+      <section class="hero shell" id="top">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><i></i> Local command system / Windows</p>
+          <h1><span>Your setup.</span><em>In your orbit.</em></h1>
+          <p class="hero-text">Turn the phone you already own into a live remote for your entire Windows setup. Direct, local and free.</p>
+          <div class="hero-actions">
+            <a class="button primary-button" data-release-download href="https://github.com/Nexiii/OrbDeck/releases">
+              <span class="windows-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              Get OrbDeck
+            </a>
+            <a class="button kofi-button" href="https://ko-fi.com/nexiii" target="_blank" rel="noreferrer"><span aria-hidden="true">&hearts;</span> Support on Ko-fi</a>
+            <a class="text-button" href="#orbit">View the route <span>&darr;</span></a>
+          </div>
+          <div class="release-data">
+            <span data-release-text="beta">Beta Latest</span>
+            <span data-release-text="size">Windows 10 / 11</span>
+            <span>No cloud</span>
+          </div>
+        </div>
+        <div class="hero-space galaxy-space" aria-label="Animated simulation of the Milky Way">
+          <div class="galaxy-visual">
+            <div class="space-stars" aria-hidden="true"></div>
+            <canvas class="galaxy-canvas" aria-hidden="true"></canvas>
+            <div class="galaxy-core" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="orbital-divider" aria-hidden="true"><i></i></div>
+
+      <section class="scroll-journey" id="orbit" data-step="0">
+        <div class="journey-stage shell">
+          <div class="journey-intro">
+            <p class="section-label">How it works</p>
+            <h2>From scan<br />to control.</h2>
+            <p>Follow one clear route from the first connection to a live, responsive deck.</p>
+          </div>
+          <div class="journey-map" aria-hidden="true">
+            <div class="journey-starfield">
+              <div class="journey-stars stars-far"></div>
+              <div class="journey-stars stars-near"></div>
+              <div class="journey-glow"></div>
+            </div>
+            <div class="journey-leg leg-one"><i></i></div>
+            <div class="journey-leg leg-two"><i></i></div>
+            <div class="journey-node journey-node-one"><span>01</span><b>Connect</b></div>
+            <div class="journey-node journey-node-two"><span>02</span><b>Arrange</b></div>
+            <div class="journey-node journey-node-three"><span>03</span><b>Control</b></div>
+            <div class="journey-cursor"><img src="./assets/orbdeck-icon.svg" alt="" /><i></i></div>
+          </div>
+          <div class="journey-footer">
+            <div class="journey-copy-stack">
+              <article class="journey-copy journey-copy-1"><div><span>01</span><b>Connect</b></div><h3>Scan the code.</h3><p>Open OrbDeck on Windows and scan the QR code with your phone. Both devices stay on your local network.</p></article>
+              <article class="journey-copy journey-copy-2"><div><span>02</span><b>Arrange</b></div><h3>Build your pages.</h3><p>Place buttons, sliders and live widgets where they make sense. Keep streaming, gaming and media controls separate.</p></article>
+              <article class="journey-copy journey-copy-3"><div><span>03</span><b>Control</b></div><h3>Tap and get feedback.</h3><p>Run actions and see current OBS, audio, media and application states directly on the deck.</p></article>
+            </div>
+            <div class="journey-status" aria-hidden="true">
+              <div><span class="status-one">01</span><span class="status-two">02</span><span class="status-three">03</span><b>/ 03</b></div>
+              <div class="journey-progress"><i></i></div>
+            </div>
+          </div>
+          <p class="journey-scroll-note">Scroll to travel</p>
+        </div>
+        <div class="journey-distance" aria-hidden="true"></div>
+      </section>
+
+      <div class="orbital-divider" aria-hidden="true"><i></i></div>
+
+      <section class="capabilities shell section" id="features">
+        <div class="section-heading" data-reveal>
+          <p class="section-label">What it controls</p>
+          <h2>Everything stays in one system.</h2>
+          <p>OrbDeck groups the controls by what you are doing, so the phone stays readable even when your setup grows.</p>
+        </div>
+        <div class="capability-console" data-reveal>
+          <div class="capability-tabs" role="tablist" aria-label="OrbDeck feature groups">
+            <button class="capability-tab is-active" id="capability-tab-0" type="button" role="tab" aria-selected="true" aria-controls="capability-panel" data-capability="0"><span class="capability-tab-index">01</span><span class="capability-tab-icon"><img src="./assets/icons/obs.svg" alt="" /></span><span class="capability-tab-copy"><strong>Stream</strong><small>OBS Studio</small></span><i aria-hidden="true"></i></button>
+            <button class="capability-tab" id="capability-tab-1" type="button" role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="1"><span class="capability-tab-index">02</span><span class="capability-tab-icon"><img src="./assets/icons/hotkeys.svg" alt="" /></span><span class="capability-tab-copy"><strong>Control</strong><small>Windows actions</small></span><i aria-hidden="true"></i></button>
+            <button class="capability-tab" id="capability-tab-2" type="button" role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="2"><span class="capability-tab-index">03</span><span class="capability-tab-icon"><img src="./assets/icons/music.svg" alt="" /></span><span class="capability-tab-copy"><strong>Monitor</strong><small>Live widgets</small></span><i aria-hidden="true"></i></button>
+          </div>
+          <article class="capability-panel" id="capability-panel" role="tabpanel" aria-labelledby="capability-tab-0">
+            <div class="capability-panel-bar"><span>Active module / A</span><span class="capability-live"><i></i>OBS ready</span></div>
+            <div class="capability-panel-body">
+              <div class="capability-panel-copy">
+                <p>OBS Studio</p><h3>Run the show from anywhere.</h3><p>Everything around OBS without leaving the room or reaching for the mouse.</p>
+                <ul><li><span>01</span>Scenes and sources</li><li><span>02</span>Stream and recording</li><li><span>03</span>Studio Mode and transitions</li><li><span>04</span>Replay Buffer</li></ul>
+              </div>
+              <div class="capability-orbit" aria-hidden="true"><div class="capability-orbit-ring ring-outer"></div><div class="capability-orbit-ring ring-inner"></div><div class="capability-orbit-core"><img src="./assets/icons/obs.svg" alt="" /></div><span class="capability-node capability-node-1"><i></i>Scenes</span><span class="capability-node capability-node-2"><i></i>Record</span><span class="capability-node capability-node-3"><i></i>Replay</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="orbital-divider" aria-hidden="true"><i></i></div>
+
+      <section class="why-section" id="why">
+        <div class="shell why-grid">
+          <div class="why-copy" data-reveal>
+            <p class="section-label">Why OrbDeck</p>
+            <h2>The deck is already in your pocket.</h2>
+            <p>Turn the phone or tablet you already own into a responsive control surface for your entire Windows setup.</p>
+            <div class="why-benefits">
+              <article><span>01</span><div><h3>No extra hardware</h3><p>Use any modern phone or tablet you already have.</p></div></article>
+              <article><span>02</span><div><h3>No account or cloud</h3><p>Your commands travel directly across your local network.</p></div></article>
+              <article><span>03</span><div><h3>No subscription</h3><p>Every current feature stays free. Support is always optional.</p></div></article>
+            </div>
+          </div>
+          <div class="why-visual" data-reveal aria-hidden="true">
+            <div class="why-orbit"><i></i><i></i></div>
+            <div class="why-device">
+              <div class="why-device-top"><span><img src="./assets/orbdeck-icon.svg" alt="" />OrbDeck</span><i></i></div>
+              <div class="why-device-grid">
+                <span><img src="./assets/icons/obs.svg" alt="" /><b>OBS</b></span><span><img src="./assets/icons/music.svg" alt="" /><b>Media</b></span><span><img src="./assets/icons/mic.svg" alt="" /><b>Mic</b></span><span><img src="./assets/icons/launch.svg" alt="" /><b>Launch</b></span><span><img src="./assets/icons/pages.svg" alt="" /><b>Pages</b></span><span><img src="./assets/icons/hotkeys.svg" alt="" /><b>Hotkeys</b></span>
+              </div>
+              <p><i></i> Connected &middot; Local network</p>
+            </div>
+            <span class="why-chip why-chip-one"><i></i>Any phone</span><span class="why-chip why-chip-two"><i></i>Free forever</span><span class="why-chip why-chip-three"><i></i>Direct link</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="orbital-divider" aria-hidden="true"><i></i></div>
+
+      <section class="download shell section" id="download" data-reveal>
+        <div class="download-system" aria-hidden="true"><i></i><i></i><span></span></div>
+        <img src="./assets/orbdeck-icon.svg" alt="" />
+        <p class="section-label" data-release-text="label">OrbDeck Latest beta</p>
+        <h2>Ready for your orbit.</h2>
+        <p>Windows 10/11 &middot; x64 &middot; Free forever</p>
+        <a class="button primary-button large-button" data-release-download href="https://github.com/Nexiii/OrbDeck/releases"><span class="windows-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Download OrbDeck</a>
+        <div class="download-links"><a data-release-notes href="https://github.com/Nexiii/OrbDeck/releases">Release notes &nearr;</a><a href="https://ko-fi.com/nexiii" target="_blank" rel="noreferrer">Support on Ko-fi &nearr;</a></div>
+      </section>
+
+      <div class="orbital-divider" aria-hidden="true"><i></i></div>
+
+      <footer class="site-footer shell">
+        <a class="brand" href="#top"><img src="./assets/orbdeck-icon.svg" alt="" /><span>OrbDeck</span></a>
+        <p>Your phone. Your deck. Your flow.</p>
+        <div><a href="https://ko-fi.com/nexiii" target="_blank" rel="noreferrer">Ko-fi</a><a href="https://github.com/Nexiii/OrbDeck">GitHub</a><span>&copy; 2026 Nexiii</span></div>
+      </footer>
+    </main>
+  </body>
+</html>
